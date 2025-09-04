@@ -1,0 +1,104 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - thank
+  - ask_route
+  - provide_student_id
+  - ask_driver_info
+  - provide_route_number
+  - ask_route_timing
+  - ask_route_students
+  - clarify
+  - ask_route_stats
+  - ask_bus_number
+  - ask_route_statistics
+  - ask_student_count
+  - error_handling
+  - invalid_student_id
+  - invalid_route
+  - ask_student_route
+
+entities:
+  - student_id
+  - route_number
+  - driver_name
+
+slots:
+  student_id:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: student_id
+  route_number:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: route_number
+  driver_name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: driver_name
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I help you with the bus service today?"
+    - text: "Hi there! What information do you need about the transport service?"
+    - text: "Welcome! I can help you with route information, driver details, and more."
+
+  utter_goodbye:
+    - text: "Goodbye! Have a safe journey!"
+    - text: "See you later! Have a great day!"
+    - text: "Bye! Feel free to ask about transport services anytime!"
+
+  utter_thank:
+    - text: "You're welcome! Let me know if you need anything else."
+    - text: "Happy to help! Is there anything else you'd like to know?"
+
+  utter_ask_student_id:
+    - text: "Please provide your student ID number."
+    - text: "What's your student ID?"
+    - text: "I'll need your student ID to fetch that information."
+
+  utter_ask_route_number:
+    - text: "Which route would you like to know about? Please use format R#1, R#2, etc."
+    - text: "Please specify the route number (e.g., R#1, R#2)."
+
+  utter_default:
+    - text: "I'm not sure I understand. Could you rephrase that?"
+    - text: "I didn't quite catch that. Could you try asking differently?"
+
+  utter_error:
+    - text: "I'm sorry, something went wrong. Please try again or contact support if the issue persists."
+    - text: "There seems to be a technical issue. Please try again in a moment."
+
+  utter_clarify:
+    - text: "I can help you with:\n- Bus routes\n- Driver information\n- Route schedules\n- Student counts\nWhat would you like to know?"
+    - text: "Let me know what you need:\n- Your bus route\n- Driver details\n- Bus timings\n- Passenger information"
+
+  utter_invalid_student_id:
+    - text: "I couldn't find that student ID. Please check and try again."
+    - text: "That student ID doesn't seem to be valid. Please verify and retry."
+
+  utter_invalid_route:
+    - text: "I couldn't find that route number. Please use format R#1, R#2, etc."
+    - text: "That route doesn't exist in our system. Please check the route number."
+
+actions:
+  - action_fetch_route
+  - action_fetch_driver_info
+  - action_fetch_route_students
+  - action_fetch_route_timing
+  - action_fetch_total_routes
+  - action_handle_error
+  - action_fetch_route_by_student_id
+  - action_fetch_route_stats
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

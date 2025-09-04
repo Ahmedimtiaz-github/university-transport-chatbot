@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-driver_name",
+      "2": "I-driver_name",
+      "3": "L-driver_name",
+      "4": "U-driver_name",
+      "5": "B-route_number",
+      "6": "I-route_number",
+      "7": "L-route_number",
+      "8": "U-route_number",
+      "9": "B-student_id",
+      "10": "I-student_id",
+      "11": "L-student_id",
+      "12": "U-student_id",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-driver_name": 1,
+      "I-driver_name": 2,
+      "L-driver_name": 3,
+      "U-driver_name": 4,
+      "B-route_number": 5,
+      "I-route_number": 6,
+      "L-route_number": 7,
+      "U-route_number": 8,
+      "B-student_id": 9,
+      "I-student_id": 10,
+      "L-student_id": 11,
+      "U-student_id": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

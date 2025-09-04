@@ -1,0 +1,69 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "ask_driver_info": 0,
+        "ask_route": 1,
+        "ask_route_stats": 2,
+        "ask_route_students": 3,
+        "ask_route_timing": 4,
+        "back": 5,
+        "clarify": 6,
+        "goodbye": 7,
+        "greet": 8,
+        "nlu_fallback": 9,
+        "out_of_scope": 10,
+        "provide_route_number": 11,
+        "provide_student_id": 12,
+        "restart": 13,
+        "session_start": 14,
+        "thank": 15
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_fetch_route": 13,
+        "action_fetch_driver_info": 14,
+        "action_fetch_route_timing": 15,
+        "action_fetch_route_students": 16,
+        "action_fetch_route_stats": 17,
+        "utter_ask_route_number": 18,
+        "utter_ask_student_id": 19,
+        "utter_clarify": 20,
+        "utter_goodbye": 21,
+        "utter_greet": 22,
+        "utter_invalid_route": 23,
+        "utter_invalid_student_id": 24,
+        "utter_thank": 25
+      },
+      "entities": {
+        "driver_name": 0,
+        "route_number": 1,
+        "student_id": 2
+      },
+      "slots": {
+        "student_id_0": 0,
+        "route_number_0": 1,
+        "last_route_0": 2,
+        "last_driver_0": 3
+      },
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

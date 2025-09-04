@@ -1,0 +1,70 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "ask_driver_info": 0,
+        "ask_driver_status": 1,
+        "ask_emergency_contact": 2,
+        "ask_general_info": 3,
+        "ask_route": 4,
+        "ask_route_stats": 5,
+        "ask_schedule": 6,
+        "back": 7,
+        "nlu_fallback": 8,
+        "out_of_scope": 9,
+        "provide_date": 10,
+        "provide_reason": 11,
+        "provide_route_number": 12,
+        "provide_student_id": 13,
+        "request_route_change": 14,
+        "restart": 15,
+        "session_start": 16
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_fetch_route": 13,
+        "action_fetch_driver_info": 14,
+        "action_fetch_schedule": 15,
+        "action_submit_route_change": 16,
+        "action_provide_general_info": 17,
+        "action_provide_emergency_contact": 18,
+        "action_fetch_driver_status": 19,
+        "action_fetch_route_stats": 20,
+        "utter_ask_date": 21,
+        "utter_ask_driver_name": 22,
+        "utter_ask_reason": 23,
+        "utter_ask_route_number": 24,
+        "utter_ask_student_id": 25,
+        "utter_emergency_contact": 26,
+        "utter_general_info": 27,
+        "utter_inform_route": 28
+      },
+      "entities": {
+        "date": 0,
+        "driver_name": 1,
+        "reason": 2,
+        "route_number": 3,
+        "student_id": 4
+      },
+      "slots": {},
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

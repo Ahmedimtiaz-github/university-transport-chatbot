@@ -1,0 +1,17 @@
+{
+  "0": "ask_bus_number",
+  "1": "ask_driver_info",
+  "2": "ask_route",
+  "3": "ask_route_statistics",
+  "4": "ask_route_stats",
+  "5": "ask_route_students",
+  "6": "ask_route_timing",
+  "7": "clarify",
+  "8": "goodbye",
+  "9": "greet",
+  "10": "invalid_route",
+  "11": "invalid_student_id",
+  "12": "provide_route_number",
+  "13": "provide_student_id",
+  "14": "thank"
+}

@@ -1,0 +1,163 @@
+version: "3.1"
+
+stories:
+- story: greet and help
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: clarify
+    - action: utter_clarify
+
+- story: thank and goodbye
+  steps:
+    - intent: thank
+    - action: utter_thank
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: fetch bus route
+  steps:
+    - intent: ask_route
+    - action: utter_ask_student_id
+    - intent: provide_student_id
+      entities:
+        - student_id: "NUNL-S24-27196"
+    - action: action_fetch_route
+
+- story: fetch driver info direct
+  steps:
+    - intent: ask_driver_info
+      entities:
+        - route_number: "R#1"
+    - action: action_fetch_driver_info
+
+- story: fetch driver info with prompt
+  steps:
+    - intent: ask_driver_info
+    - action: utter_ask_route_number
+    - intent: provide_route_number
+      entities:
+        - route_number: "R#1"
+    - action: action_fetch_driver_info
+
+- story: fetch route timing direct
+  steps:
+    - intent: ask_route_timing
+      entities:
+        - route_number: "R#1"
+    - action: action_fetch_route_timing
+
+- story: fetch route timing with prompt
+  steps:
+    - intent: ask_route_timing
+    - action: utter_ask_route_number
+    - intent: provide_route_number
+      entities:
+        - route_number: "R#1"
+    - action: action_fetch_route_timing
+
+- story: fetch route students direct
+  steps:
+    - intent: ask_route_students
+      entities:
+        - route_number: "R#1"
+    - action: action_fetch_route_students
+
+- story: fetch route students with prompt
+  steps:
+    - intent: ask_route_students
+    - action: utter_ask_route_number
+    - intent: provide_route_number
+      entities:
+        - route_number: "R#1"
+    - action: action_fetch_route_students
+
+- story: fetch bus number direct
+  steps:
+    - intent: ask_bus_number
+      entities:
+        - route_number: "R#1"
+    - action: action_fetch_route
+
+- story: fetch bus number with prompt
+  steps:
+    - intent: ask_bus_number
+    - action: utter_ask_route_number
+    - intent: provide_route_number
+      entities:
+        - route_number: "R#1"
+    - action: action_fetch_route
+
+- story: fetch route stats direct
+  steps:
+    - intent: ask_route_stats
+      entities:
+        - route_number: "R#1"
+    - action: action_fetch_route_stats
+
+- story: fetch route stats with prompt
+  steps:
+    - intent: ask_route_stats
+    - action: utter_ask_route_number
+    - intent: provide_route_number
+      entities:
+        - route_number: "R#1"
+    - action: action_fetch_route_stats
+
+- story: fetch route statistics direct
+  steps:
+    - intent: ask_route_statistics
+      entities:
+        - route_number: "R#1"
+    - action: action_fetch_route_stats
+
+- story: fetch route statistics with prompt
+  steps:
+    - intent: ask_route_statistics
+    - action: utter_ask_route_number
+    - intent: provide_route_number
+      entities:
+        - route_number: "R#1"
+    - action: action_fetch_route_stats
+
+- story: fetch route with context
+  steps:
+    - intent: ask_route
+    - action: utter_ask_student_id
+    - intent: provide_student_id
+      entities:
+        - student_id: "NUNL-S24-27196"
+    - action: action_fetch_route
+    - intent: ask_driver_info
+      entities:
+        - route_number: "R#1"
+    - action: action_fetch_driver_info
+
+- story: fetch driver info with context
+  steps:
+    - intent: ask_driver_info
+      entities:
+        - route_number: "R#1"
+    - action: action_fetch_driver_info
+    - intent: ask_route_students
+      entities:
+        - route_number: "R#1"
+    - action: action_fetch_route_students
+
+- story: invalid route number
+  steps:
+    - intent: ask_route
+    - action: utter_ask_route_number
+    - intent: invalid_route
+    - action: utter_invalid_route
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: invalid student ID
+  steps:
+    - intent: ask_student_route
+    - action: utter_ask_student_id
+    - intent: invalid_student_id
+    - action: utter_invalid_student_id
+    - intent: goodbye
+    - action: utter_goodbye 

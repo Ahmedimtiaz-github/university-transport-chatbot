@@ -1,0 +1,138 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - good morning
+    - good evening
+    - hey there
+    - hi there
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you around
+    - see you later
+    - have a nice day
+
+- intent: thank
+  examples: |
+    - thanks
+    - thank you
+    - thanks a lot
+    - thank you very much
+    - appreciate it
+
+- intent: ask_route
+  examples: |
+    - What is my bus route?
+    - Which bus do I take?
+    - Tell me my bus route
+    - Can you tell me my bus route information?
+    - I need to know my bus details
+    - What's my transport route?
+    - Show me my bus schedule
+
+- intent: provide_student_id
+  examples: |
+    - My student ID is [12345](student_id)
+    - It is [98765](student_id)
+    - [12345](student_id)
+    - Student ID [54321](student_id)
+    - ID number [11223](student_id)
+    - [NUMS-F23-1234](student_id)
+    - [NUNL-S24-27196](student_id)
+
+- intent: ask_driver_info
+  examples: |
+    - Who is my bus driver?
+    - Can you tell me about the driver?
+    - What are my driver's details?
+    - I need the driver's contact information
+    - Driver information please
+    - Who drives my bus?
+    - Driver details for route [R#1](route_number)
+
+- intent: provide_route_number
+  examples: |
+    - [R#1](route_number)
+    - Route [R#2](route_number)
+    - Bus route [R#3](route_number)
+    - It's [R#4](route_number)
+    - The route is [R#5](route_number)
+
+- intent: ask_route_timing
+  examples: |
+    - What time is my bus?
+    - When does the bus arrive?
+    - Bus timing please
+    - What's the schedule?
+    - When does route [R#1](route_number) start?
+    - Timing for [R#2](route_number)
+
+- intent: ask_route_students
+  examples: |
+    - How many students are on my route?
+    - Who else takes this bus?
+    - Show me the passenger list
+    - Student count on [R#1](route_number)
+    - List of students on [R#2](route_number)
+
+- intent: clarify
+  examples: |
+    - I don't understand
+    - Can you explain?
+    - What can you help me with?
+    - What are my options?
+    - Show me what you can do
+    - Help me understand
+
+- intent: ask_route_stats
+  examples: |
+    - What are the route statistics?
+    - Show me route information
+    - Give me details about [R#1](route_number)
+    - Statistics for [R#2](route_number)
+    - Route analytics
+
+- intent: ask_bus_number
+  examples: |
+    - What's my bus number?
+    - Which bus should I take?
+    - Bus number for [R#1](route_number)
+    - Tell me the bus number
+
+- intent: error_handling
+  examples: |
+    - Something went wrong
+    - That's not right
+    - There's an error
+    - This isn't working
+    - Can you check again?
+    - I got an error
+
+- intent: invalid_student_id
+  examples: |
+    - ABC123
+    - 123
+    - INVALID-ID
+    - NOT-A-STUDENT
+    - wrong-format
+
+- intent: invalid_route
+  examples: |
+    - Route 123
+    - Bus 5
+    - Line 7
+    - Wrong route
+    - Invalid route
+
+- intent: ask_student_route
+  examples: |
+    - Which route is for student [12345](student_id)?
+    - Show me the route for [98765](student_id)
+    - Find student route
+    - Get route by student ID

@@ -1,0 +1,201 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - good morning
+    - good evening
+    - good afternoon
+    - howdy
+    - hey there
+    - hi there
+    - greetings
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - good night
+    - bye bye
+    - thanks bye
+    - thank you goodbye
+    - ok bye
+    - bys
+
+- intent: thank
+  examples: |
+    - thanks
+    - thank you
+    - thank you so much
+    - thanks a lot
+    - I appreciate it
+    - that's helpful
+
+- intent: ask_route
+  examples: |
+    - I want to know my bus route
+    - what is my bus route
+    - which bus should I take
+    - how do I get to university
+    - show me my route
+    - tell me about my bus route
+    - what's my transport route
+    - which route am I assigned to
+    - can you tell me my bus route
+    - I need to know my bus route
+    - can i know my bus route
+    - what route am i on
+
+- intent: provide_student_id
+  examples: |
+    - my id is [NUNL-S24-27196](student_id)
+    - [NUNL-S24-27196](student_id)
+    - student id [NUNL-S24-27196](student_id)
+    - [NUNL-S24-27196](student_id) is my id
+    - here's my id [NUNL-S24-27196](student_id)
+    - my id is [NUMS-F23-1234](student_id)
+    - [NUMS-F23-1234](student_id)
+    - student id [NUMS-F23-1234](student_id)
+    - [NUMS-F23-1234](student_id) is my id
+    - here's my id [NUMS-F23-1234](student_id)
+    - my student id is [NUMS-S23-45678](student_id)
+    - [NUMS-S23-45678](student_id)
+    - registration number [NUMS-F24-5678](student_id)
+    - [NUMS-F24-5678](student_id) is my registration number
+    - my registration id is [NUMS-S22-98765](student_id)
+
+- intent: ask_driver_info
+  examples: |
+    - who is the driver for [R#1](route_number)
+    - tell me about the driver of [R#2](route_number)
+    - driver information for [R#3](route_number)
+    - who drives [R#4](route_number)
+    - driver details for [R#5](route_number)
+    - can you tell me about the driver of [R#1](route_number)
+    - what are the driver details for [R#2](route_number)
+    - who's assigned to [R#3](route_number)
+    - who is driving route [R#1](route_number)
+    - who is the driver for route [R#2](route_number)
+    - driver info [R#3](route_number)
+
+- intent: ask_route_timing
+  examples: |
+    - when does the bus arrive
+    - what time is pickup
+    - what's the arrival time
+    - when does [R#1](route_number) start
+    - what's the schedule for [R#2](route_number)
+    - bus timing for [R#3](route_number)
+    - when should I be ready
+    - what time should I wait for the bus
+    - what are the timings for [R#3](route_number)
+    - show me the schedule for [R#4](route_number)
+    - what time does [R#5](route_number) start
+    - when does [R#1](route_number) leave
+
+- intent: ask_route_students
+  examples: |
+    - how many students are on my route
+    - who else takes this bus
+    - number of students on [R#1](route_number)
+    - student count for [R#2](route_number)
+    - how many people take [R#3](route_number)
+    - what's the capacity of [R#4](route_number)
+    - how many students are on [R#3](route_number)
+    - show me students on [R#1](route_number)
+    - list students in [R#2](route_number)
+
+- intent: ask_bus_number
+  examples: |
+    - what is the bus number for [R#1](route_number)
+    - which bus is assigned to [R#2](route_number)
+    - show me bus number for [R#3](route_number)
+    - what bus runs on [R#4](route_number)
+    - bus number for [R#5](route_number)
+    - what's the bus number of [R#1](route_number)
+    - tell me the bus number for [R#2](route_number)
+
+- intent: clarify
+  examples: |
+    - I don't understand
+    - can you explain that
+    - what do you mean
+    - I'm confused
+    - that's not clear
+    - please explain
+    - I need help
+    - how does this work
+
+- intent: ask_route_stats
+  examples: |
+    - What are the statistics for route [R#1](route_number)
+    - Show me statistics for [R#2](route_number)
+    - Give me stats for [R#3](route_number)
+    - Route stats for [R#4](route_number)
+    - What are the details for [R#5](route_number)
+    - Show route statistics for [R#1](route_number)
+    - I want to see stats for [R#2](route_number)
+    - Can you show me the statistics for [R#3](route_number)
+    - Tell me about route [R#4](route_number) statistics
+    - What's the status of route [R#5](route_number)
+    - Give me a summary of route [R#1](route_number)
+    - Show me route [R#2](route_number) information
+    - What are the stats for [R#3](route_number)
+    - Route [R#4](route_number) statistics please
+    - Stats for route [R#5](route_number)
+
+- intent: ask_route_statistics
+  examples: |
+    - What are the complete details for route [R#1](route_number)
+    - Show me all information about [R#2](route_number)
+    - I need full statistics for [R#3](route_number)
+    - Complete route information for [R#4](route_number)
+    - Tell me everything about route [R#5](route_number)
+    - What's the current status of [R#1](route_number)
+    - Give me a detailed summary of [R#2](route_number)
+    - Full stats for route [R#3](route_number)
+    - Detailed information about [R#4](route_number)
+    - Complete overview of [R#5](route_number)
+
+- intent: provide_route_number
+  examples: |
+    - [R#1](route_number)
+    - route [R#2](route_number)
+    - it's [R#3](route_number)
+    - the route is [R#4](route_number)
+    - I'm on [R#5](route_number)
+    - my route is [R#1](route_number)
+    - I take [R#2](route_number)
+    - bus route [R#3](route_number)
+    - route number [R#4](route_number)
+    - I'm assigned to [R#5](route_number)
+
+- intent: invalid_route
+  examples: |
+    - route 10
+    - R10
+    - route 20
+    - R20
+    - route 30
+    - R30
+    - route 40
+    - R40
+    - route 50
+    - R50
+
+- intent: invalid_student_id
+  examples: |
+    - 12345
+    - ABC123
+    - 98765
+    - XYZ789
+    - 45678
+    - student123
+    - 78901
+    - ID456
+    - 23456
+    - student789 

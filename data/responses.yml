@@ -1,0 +1,10 @@
+version: "3.1"
+
+responses:
+  utter_invalid_route:
+  - text: "I'm sorry, but that route number doesn't exist in our system. Please provide a valid route number."
+  - text: "That route number is not in our database. Could you please check and provide a valid route number?"
+
+  utter_invalid_student_id:
+  - text: "I couldn't find a student with that ID in our system. Please provide a valid student ID."
+  - text: "That student ID doesn't exist in our records. Could you please verify and provide a valid student ID?" 

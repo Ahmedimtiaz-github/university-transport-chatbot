@@ -1,0 +1,14 @@
+{
+  "0": "ask_driver_info",
+  "1": "ask_driver_status",
+  "2": "ask_emergency_contact",
+  "3": "ask_general_info",
+  "4": "ask_route",
+  "5": "ask_route_stats",
+  "6": "ask_schedule",
+  "7": "provide_date",
+  "8": "provide_reason",
+  "9": "provide_route_number",
+  "10": "provide_student_id",
+  "11": "request_route_change"
+}

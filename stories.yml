@@ -1,0 +1,28 @@
+version: "2.0"
+stories:
+- story: fetch bus route
+  steps:
+    - intent: ask_route
+    - action: utter_ask_student_id
+    - intent: provide_student_id
+      entities:
+        - student_id: "12345"
+    - action: action_fetch_route_by_student_id
+
+- story: greet and fetch route
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_route
+    - action: utter_ask_student_id
+    - intent: provide_student_id
+      entities:
+        - student_id: "12345"
+    - action: action_fetch_route_by_student_id
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: error handling
+  steps:
+    - intent: error_handling
+    - action: utter_error

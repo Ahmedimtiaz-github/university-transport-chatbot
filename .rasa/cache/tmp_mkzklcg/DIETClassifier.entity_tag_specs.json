@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-route_number",
+      "2": "I-route_number",
+      "3": "L-route_number",
+      "4": "U-route_number",
+      "5": "B-student_id",
+      "6": "I-student_id",
+      "7": "L-student_id",
+      "8": "U-student_id",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-route_number": 1,
+      "I-route_number": 2,
+      "L-route_number": 3,
+      "U-route_number": 4,
+      "B-student_id": 5,
+      "I-student_id": 6,
+      "L-student_id": 7,
+      "U-student_id": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]
