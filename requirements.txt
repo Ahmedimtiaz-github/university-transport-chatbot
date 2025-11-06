@@ -1,0 +1,7 @@
+rasa
+rasa-sdk
+mysql-connector-python
+PyMySQL
+python-dotenv
+SQLAlchemy
+requests
