@@ -1,22 +1,19 @@
+# Use the official Rasa 1.10.2 image (includes compatible aiohttp/yarl/etc)
 FROM rasa/rasa:1.10.2-full
 
-# Temporarily switch to root so we can upgrade pip and install requirements
-USER root
-
 WORKDIR /app
+
+# copy only requirements first (cache friendly)
 COPY requirements.txt /app/requirements.txt
 
-RUN python -m pip install --upgrade pip setuptools wheel \
- && pip install --no-cache-dir -r /app/requirements.txt --ignore-installed rasa
+# Install only the extras — do NOT reinstall rasa
+RUN pip install --no-cache-dir -r /app/requirements.txt --ignore-installed rasa
 
-# Switch back to non-root user used by the base image (common for rasa images).
-# If this causes "unknown user" during build, remove this USER line.
-USER 1001
-
-
-# copy the rest of the project
+# copy the rest of your application
 COPY . /app
 
-EXPOSE 8080
+# Expose the port Render will use (Render provides $PORT at runtime)
+ENV PORT=10000
 
-CMD ["sh","-c","rasa run --enable-api --cors \"*\" --port $PORT"]
+# Start Rasa server (bind to $PORT). We set default PORT for local testing.
+CMD ["sh", "-c", "rasa run --enable-api --cors \"*\" --port ${PORT}"]
