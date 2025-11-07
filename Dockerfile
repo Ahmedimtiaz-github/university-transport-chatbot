@@ -1,26 +1,19 @@
-﻿FROM python:3.8-slim-bullseye
-
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    gcc \
-    default-libmysqlclient-dev \
-    libssl-dev \
-    libffi-dev \
-    curl \
- && rm -rf /var/lib/apt/lists/*
+﻿FROM rasa/rasa:1.10.2-full
 
 WORKDIR /app
 
+# copy only requirements first for layer caching
 COPY requirements.txt /app/requirements.txt
 
+# install other python deps but don't re-install rasa itself
 RUN python -m pip install --upgrade pip setuptools wheel \
- && pip install -r /app/requirements.txt
+ && pip install --no-cache-dir -r /app/requirements.txt --ignore-installed rasa
 
+# copy the rest of the project
 COPY . /app
 
-EXPOSE 5005
+# expose the HTTP port that Render expects
+EXPOSE 8080
 
-CMD ["rasa","run","--enable-api","--port","5005","--cors","*"]
+# default CMD; Render override (Docker Command) will still work if you set it
+CMD ["sh","-c","rasa run --enable-api --cors \"*\" --port $PORT"]
