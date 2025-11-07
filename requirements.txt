@@ -1,4 +1,4 @@
-rasa
+﻿rasa==1.10.2
 rasa-sdk
 mysql-connector-python
 PyMySQL
