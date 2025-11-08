@@ -1,9 +1,7 @@
-# minimal extras for your app — DO NOT list rasa or tensorflow here
-rasa-sdk==1.10.1
+﻿rasa-sdk==1.10.1
 mysql-connector-python
 PyMySQL
 python-dotenv
 SQLAlchemy
 requests
 gunicorn
-
