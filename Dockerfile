@@ -1,10 +1,10 @@
 ﻿FROM rasa/rasa:1.10.2-full
-
 WORKDIR /app
 COPY . /app
+ENV PORT=5005
 
-# Rasa default port (Render will pass ); EXPOSE is informational.
-EXPOSE 5005
+# override base image entrypoint so shell can expand $PORT and run the command
+ENTRYPOINT ["/bin/sh","-c"]
 
-# Use  if provided by Render, otherwise default to 5005.
-CMD sh -c 'rasa run --enable-api --cors "*" --port '
+# run rasa using the PORT env var Render provides
+CMD ["rasa run --enable-api --cors \"*\" --port $PORT"]
