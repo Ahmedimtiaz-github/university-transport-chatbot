@@ -13,7 +13,6 @@ __pycache__/
 *.log
 
 # Rasa trained models
-models/*.tar.gz
 
 # Local scripts not needed on Render
 *.bat
