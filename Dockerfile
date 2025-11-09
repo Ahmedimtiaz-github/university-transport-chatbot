@@ -1,4 +1,4 @@
-﻿FROM rasa/rasa:1.10.2-full
+﻿FROM rasa/rasa:3.6.21-full
 WORKDIR /app
 COPY . /app
 ENV PORT=5005
