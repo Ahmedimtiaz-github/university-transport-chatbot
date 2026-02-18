@@ -338,14 +338,6 @@ docker build -t university-transport-chatbot .
 docker run -p 5005:5005 university-transport-chatbot
 ```
 
-### Render
-
-1. Create a new **Web Service** on [Render](https://render.com).
-2. Connect this GitHub repository.
-3. Render will auto-detect the `Dockerfile`.
-4. Set the `PORT` environment variable (Render provides this automatically).
-5. The Rasa API will be available at your Render URL.
-
 ### API Endpoints
 
 Once deployed, the Rasa server exposes:
@@ -376,21 +368,6 @@ curl -X POST http://localhost:5005/webhooks/rest/webhook \
 | **mysql-connector-python** | Latest | MySQL database driver |
 | **SQLAlchemy** | Latest | ORM / database toolkit |
 | **Docker** | Latest | Containerization |
-| **Gunicorn** | Latest | WSGI HTTP server |
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Here's how to get started:
-
-1. **Fork** the repository
-2. **Create** a feature branch: `git checkout -b feature/amazing-feature`
-3. **Commit** your changes: `git commit -m 'Add amazing feature'`
-4. **Push** to the branch: `git push origin feature/amazing-feature`
-5. **Open** a Pull Request
-
----
 
 ## 📄 License
 
